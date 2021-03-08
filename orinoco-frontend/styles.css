@@ -1,0 +1,222 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Rosario', 'sans serif';
+    background-image: url(../orinoco-frontend/img/background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+header, footer{
+    font-family: "Merienda One", cursive;
+    background-color: rgba(107, 112, 92, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    width:  200px;
+    height: 60px;
+    cursor: pointer;
+}
+#main, .main{
+    text-align: center;
+    background: rgba(242, 235, 221, 0.5);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+a:hover{
+    color: black;
+    filter: brightness(1.1);
+}
+li a, ul, footer ul{
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    list-style: none;
+    padding-right: 35px;
+    width: 100%;
+}
+p{
+    font-family: "Merienda One", cursive;
+    font-weight: 500;
+    font-size: 16px;
+}
+.lien-intro{
+    text-decoration: none;
+    color: white;
+}
+.card{
+    background-color: rgba(242, 235, 221, 0.6);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 420px;
+    height: 510px;
+    border: solid 2px black;
+    border-radius: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.first-content, .second-content{
+    display: flex;
+    justify-content: center;
+}
+#cart-article, #page-produit{
+    background: rgba(242, 235, 221, 0.6);
+    text-align: center;
+    width: 850px;
+    height: 780px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 25%;
+    margin-bottom: 40px;
+}
+h1, h2{
+    font-family: "Merienda One", cursive;
+}
+.articles{
+    width: 350px;
+    height: 380px;
+    object-fit: cover;
+}
+.see-btn{
+    font-family: "Merienda One", cursive;
+    font-size: 14px;
+    text-align: center;
+    background-color: rgba(107, 112, 92, 0.8);
+    border: solid 2px #855723;
+    border-radius: 20px;
+    color: white;
+    padding: 4px 8px 4px 8px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+.see-btn:hover{
+    color: black;
+    box-shadow: gray 3px 4px 2px;
+}
+.texte{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+#produits{
+    height: 500px;
+}
+/* MEDIA QUERIES*/
+/* PHONES */
+@media only screen and (min-width: 320px) and (max-width: 640px){
+    /* INDEX PAGE*/    
+    html, .container{
+        max-width: 640px;
+    }
+    header, footer{
+        display: flex;
+        justify-content: space-around;
+        padding: 0 10px;
+    }
+    .nav-links, a .cart{
+        display: flex;
+        flex-direction: row;
+        font-size: 13px;
+    }
+    .logo{
+        width: 100px;
+        height: 50px;
+    }
+    li a, ul, footer ul{
+        font-size: 13px;
+        padding: 10px;
+    }
+    .text{
+        margin-bottom: 30px;
+    }
+    h1{
+        font-size: 18px;
+    }
+    /* PAGE ARTICLES*/
+    .first-content, .second-content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card{
+        width: 330px;
+        margin: 5px 0 15px 0;
+    }
+    .articles{
+        width: 300px;
+    }
+    /* PAGE PRODUIT */
+    #page-produit, #cart-article{
+        width: 355px;
+        height: 500px;
+        position: unset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+    }
+    #produits{
+        width: 330px;
+        height: 280px;
+    }
+}
+/* TABLETTES */
+@media only screen and (min-width: 765px) and (max-width: 1024px){
+    header, footer{
+        display: flex;
+        justify-content: space-around;
+    }
+    section{
+        width: 70%;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    p{
+        margin-bottom: 30px;
+    }
+    #main{
+        height: 700px;
+    }
+    .first-content, .second-content{
+        flex-wrap: wrap;
+        display: flex;
+    }
+    .card{
+        width: 750px;
+        margin: 10px;
+    }
+    .articles{
+        width: 740px;
+    }
+    #page-produit, #cart-article{
+        position: unset;
+        width: 750px;
+        height: auto;
+        margin: 8px 8px 20px 8px;
+    }
+    
+}
