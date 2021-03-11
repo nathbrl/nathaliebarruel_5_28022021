@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
+        <!--google fonts a fontawesome icons-->
         <link href="https://fonts.googleapis.com/css2?family=Rosario&display=swap" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css2?family=Merienda+One&amp;display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/ef3db5a6d8.js" crossorigin="anonymous"></script>
@@ -14,9 +15,11 @@
     <body>
         <div class="container">
             <header>
+                <!--logo-->
                 <a href="index.html">
                     <img src="./img/logo.png" alt="Logo Orinoco" class="logo">
                 </a>
+                <!--navbar-->
                     <nav class="nav-links">
                         <ul>
                             <li><a href="index.html">Accueil</a></li>
@@ -25,15 +28,28 @@
                         </ul>
                     </nav>
             </header>
-            <article id="page-produit">
+            <!--div présentation produits-->
+            <div id="page-produit">
                 <img src="" alt="mobilier" id="produits">
                 <p id="model"> <strong>Modèle:</strong></p>
-                <p id="vernis"> <strong>Vernis:</strong></p>
+                <p id="vernis"> <strong><label for="pet-select">Choix du vernis:</label></strong>
+                    <select name="pets" id="pet-select">
+                        <option value="">select a color</option>
+                        <option value="Dark Oak">Dark Oak</option>
+                        <option value="Light Oak">Light Oak</option>
+                        <option value="Mahogany">Mahogany</option>
+                        <option value="Teak">Teak</option>
+                    </select>
+                </p>
                 <p id="description"><strong>Description:</strong></p>
                 <p id="prix"><strong>Prix:</strong></p>
-                <a href="cart.html"><div class="see-btn">Ajouter au panier</div></a>
-            </article>
+                <div>
+                    <a href="cart.html"><div class="see-btn">Ajouter au panier</div></a>
+                    <a href="liste-articles.html"><div class="see-btn">Page précédente</div></a>
+                </div>
+            </div>
             <footer>
+                <!--footer nav-->
                 <ul class="nav-links">
                     <li><a href="#mentions">Mentions légales</a></li>
                     <li><a class="social" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>

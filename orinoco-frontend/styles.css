@@ -1,11 +1,10 @@
-body{
+body,html{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     width: 100%;
-    font-family: 'Rosario', 'sans serif';
+    font-family: "Merienda One", cursive;
     background-image: url(../orinoco-frontend/img/background.webp);
-    background-repeat: no-repeat;
     background-size: cover;
 }
 .container{
@@ -17,8 +16,11 @@ header, footer{
     font-family: "Merienda One", cursive;
     background-color: rgba(107, 112, 92, 0.8);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+}
+header ul a {
+    padding-right: 20px;
 }
 .logo{
     width:  200px;
@@ -47,36 +49,27 @@ li a, ul, footer ul{
     font-weight: 600;
     font-size: 18px;
     list-style: none;
-    padding-right: 35px;
     width: 100%;
 }
 p{
     font-family: "Merienda One", cursive;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
 }
 .lien-intro{
     text-decoration: none;
     color: white;
 }
-.card{
+.liste{
     background-color: rgba(242, 235, 221, 0.6);
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
     align-content: center;
-    width: 420px;
-    height: 510px;
+    width: 1000px;
+    height: auto;
     border: solid 2px black;
     border-radius: 15px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 20px;
-    margin-bottom: 20px;
     text-align: center;
 }
-.first-content, .second-content{
+.content{
     display: flex;
     justify-content: center;
 }
@@ -89,14 +82,19 @@ p{
     flex-direction: column;
     position: relative;
     left: 25%;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
-h1, h2{
+.varnish,
+.varnish1, .varnish2,
+.varnish3, .varnish4{
     font-family: "Merienda One", cursive;
 }
-.articles{
-    width: 350px;
-    height: 380px;
+.image, .image1,
+.image2, .image3,
+.image4{
+    width: 250px;
+    height: 180px;
     object-fit: cover;
 }
 .see-btn{
@@ -104,7 +102,7 @@ h1, h2{
     font-size: 14px;
     text-align: center;
     background-color: rgba(107, 112, 92, 0.8);
-    border: solid 2px #855723;
+    border: solid 2px white;
     border-radius: 20px;
     color: white;
     padding: 4px 8px 4px 8px;
@@ -124,12 +122,41 @@ h1, h2{
 #produits{
     height: 500px;
 }
+table{
+    border-collapse: collapse;
+  }
+  
+  td{
+    border: 1px solid black;
+  }
+.one, .two, .three, .four{
+    border: solid 2px white;
+    border-radius: 10%;
+    padding: 8px;
+    margin-bottom: 4px;
+    width: 80px;
+    text-align: center;
+}
+.one{
+    background-color: #55342b;
+}
+.two{
+    background-color: #d1af84;
+}
+.three{
+    background-color: #c04000;
+}
+.four{
+    background-color: #ab8953;
+}
+
+
 /* MEDIA QUERIES*/
 /* PHONES */
 @media only screen and (min-width: 320px) and (max-width: 640px){
-    /* INDEX PAGE*/    
-    html, .container{
-        max-width: 640px;
+    /* INDEX PAGE*/
+    html, body{
+        width: 100%;
     }
     header, footer{
         display: flex;
@@ -152,30 +179,57 @@ h1, h2{
     .text{
         margin-bottom: 30px;
     }
-    h1{
-        font-size: 18px;
+    .varnish,
+    .varnish1, .varnish2,
+    .varnish3, .varnish4,
+    .info, .info1, .info2,
+    .nfo3, .info4{
+        font-size: 12px;
+    }
+    .varnish,
+    .varnish1, .varnish2,
+    .varnish3, .varnish4{
+        width: 50px;
+        margin-left: auto;
+        margin-right: auto;
     }
     /* PAGE ARTICLES*/
-    .first-content, .second-content{
-        flex-direction: column;
-        align-items: center;
+    .liste{
+        max-width: 605px;
+        min-width: 330px;
     }
-    .card{
-        width: 330px;
-        margin: 5px 0 15px 0;
+    .image, .image1,
+    .image2, .image3,
+    .image4{
+        width: 90px;
+        height: auto;
     }
-    .articles{
-        width: 300px;
+    p{
+        font-size: 13px;
+    }
+    table, tbody, tr{
+        max-width: 650px;
+        height: auto;
+        font-size: 12px;
+        min-width: 330px;
+    }
+    td {
+        width: 50px;
+    }
+    .see-btn{
+        width: 40px;
+        height: 50px;
+        font-size: 11px;
     }
     /* PAGE PRODUIT */
     #page-produit, #cart-article{
         width: 355px;
-        height: 500px;
+        height: 550px;
         position: unset;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 10px;
+        margin: auto;
     }
     #produits{
         width: 330px;
@@ -183,25 +237,21 @@ h1, h2{
     }
 }
 /* TABLETTES */
-@media only screen and (min-width: 765px) and (max-width: 1024px){
+@media only screen and (min-width: 641px) and (max-width: 1000px){
     header, footer{
         display: flex;
         justify-content: space-around;
     }
-    section{
-        width: 70%;
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
-    p{
-        margin-bottom: 30px;
+    table{
+        width: 340px;
+        max-width: 365px;
+        height: auto;
+        font-size: 12px;
     }
     #main{
         height: 700px;
     }
-    .first-content, .second-content{
+    .content{
         flex-wrap: wrap;
         display: flex;
     }
@@ -209,14 +259,19 @@ h1, h2{
         width: 750px;
         margin: 10px;
     }
-    .articles{
-        width: 740px;
+    .liste, table{
+        width: 900px;
+        height: auto;
+    }
+    .image, .image1,
+    .image2, .image3,
+    .image4{
+        width: 395px;
+        height: auto;
     }
     #page-produit, #cart-article{
         position: unset;
-        width: 750px;
-        height: auto;
-        margin: 8px 8px 20px 8px;
+        height: 800px;
+        margin: auto;
     }
-    
 }
