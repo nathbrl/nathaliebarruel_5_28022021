@@ -63,8 +63,6 @@ p{
 .liste{
     background-color: rgba(242, 235, 221, 0.6);
     align-content: center;
-    width: 1000px;
-    height: auto;
     border: solid 2px black;
     border-radius: 15px;
     text-align: center;
@@ -73,7 +71,7 @@ p{
     display: flex;
     justify-content: center;
 }
-#cart-article, #page-produit{
+#cart-article, .page-produit{
     background: rgba(242, 235, 221, 0.6);
     text-align: center;
     width: 850px;
@@ -89,6 +87,7 @@ p{
 .varnish1, .varnish2,
 .varnish3, .varnish4{
     font-family: "Merienda One", cursive;
+    font-size: 13px;
 }
 .image, .image1,
 .image2, .image3,
@@ -105,8 +104,8 @@ p{
     border: solid 2px white;
     border-radius: 20px;
     color: white;
-    padding: 4px 8px 4px 8px;
     margin-bottom: 15px;
+    padding: 4px 8px 4px 8px;
     display: inline-block;
 }
 .see-btn:hover{
@@ -120,37 +119,23 @@ p{
     font-weight: bold;
 }
 #produits{
-    height: 500px;
+    height: 450px;
 }
 table{
     border-collapse: collapse;
-  }
+}
   
-  td{
+td{
     border: 1px solid black;
-  }
-.one, .two, .three, .four{
-    border: solid 2px white;
-    border-radius: 10%;
-    padding: 8px;
-    margin-bottom: 4px;
-    width: 80px;
+}
+option{
+    color: black;
     text-align: center;
 }
-.one{
-    background-color: #55342b;
+table tbody{
+    width: 850px;
+    display: inherit;
 }
-.two{
-    background-color: #d1af84;
-}
-.three{
-    background-color: #c04000;
-}
-.four{
-    background-color: #ab8953;
-}
-
-
 /* MEDIA QUERIES*/
 /* PHONES */
 @media only screen and (min-width: 320px) and (max-width: 640px){
@@ -208,23 +193,24 @@ table{
         font-size: 13px;
     }
     table, tbody, tr{
-        max-width: 650px;
-        height: auto;
         font-size: 12px;
-        min-width: 330px;
+        display: inline;
     }
     td {
-        width: 50px;
+        width: 190px;
+    }
+    select, option{
+        width: 100px;
     }
     .see-btn{
-        width: 40px;
+        width: 60px;
         height: 50px;
         font-size: 11px;
     }
     /* PAGE PRODUIT */
-    #page-produit, #cart-article{
+    .page-produit, #cart-article{
         width: 355px;
-        height: 550px;
+        height: auto;
         position: unset;
         display: flex;
         justify-content: center;
@@ -232,8 +218,9 @@ table{
         margin: auto;
     }
     #produits{
-        width: 330px;
-        height: 280px;
+        padding-top: 20px;
+        width: 300px;
+        height: 180px;
     }
 }
 /* TABLETTES */
@@ -243,9 +230,8 @@ table{
         justify-content: space-around;
     }
     table{
-        width: 340px;
-        max-width: 365px;
         height: auto;
+        display: block;
         font-size: 12px;
     }
     #main{
@@ -260,18 +246,21 @@ table{
         margin: 10px;
     }
     .liste, table{
-        width: 900px;
-        height: auto;
+        width: 750px;
+    }
+    td {
+        width: 130px;
     }
     .image, .image1,
     .image2, .image3,
     .image4{
-        width: 395px;
+        width: 240px;
         height: auto;
     }
-    #page-produit, #cart-article{
-        position: unset;
-        height: 800px;
+    .page-produit, #cart-article{
+        position: initial;
+        height: 895px;
         margin: auto;
+        width: auto;
     }
 }

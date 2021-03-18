@@ -26,9 +26,10 @@ const fetchData = async() => {
     // PRICE
   const price = data[0];
   const price1 = document.querySelector('.price');
-    price1.innerHTML = price.price;
-  })
-  data.forEach(element => {
+    price1.innerHTML = price.price + "€";
+  });
+
+  // Deuxième produit 
     image = data[1];
     image2 = document.querySelector('.image1').innerHtml = image.imageUrl;
     varnish = data[1];
@@ -36,11 +37,11 @@ const fetchData = async() => {
     desc = data[1];
     desc2 = document.querySelector('.info1').innerHTML = desc.description;
     price = data[1];
-    price2 = document.querySelector('.price1').innerHTML = data[1].price;
-    name = data[1];
+    price2 = document.querySelector('.price1').innerHTML = data[1].price + "€";
+    name1 = data[1];
     name2 = document.querySelector('.name1').innerHTML = data[1].name;
-  })
-  data.forEach(element => {
+
+  // Troisième produit
     image = data[2];
     image3 = document.querySelector('.image2').innerHtml = image.imageUrl;
     varnish = data[2];
@@ -48,11 +49,11 @@ const fetchData = async() => {
     desc = data[2];
     desc3 = document.querySelector('.info2').innerHTML = desc.description;
     price = data[2];
-    price3 = document.querySelector('.price2').innerHTML = data[2].price;
-    name = data[2];
+    price3 = document.querySelector('.price2').innerHTML = data[2].price + "€";
+    name1 = data[2];
     name3 = document.querySelector('.name2').innerHTML = data[2].name;
-  })
-  data.forEach(element => {
+
+  // Quatrième produit
     image = data[3];
     image4 = document.querySelector('.image3').innerHtml = image.imageUrl;
     varnish = data[3];
@@ -60,11 +61,11 @@ const fetchData = async() => {
     desc = data[3];
     desc4 = document.querySelector('.info3').innerHTML = desc.description;
     price = data[3];
-    price4 = document.querySelector('.price3').innerHTML = data[3].price;
-    name = data[3];
+    price4 = document.querySelector('.price3').innerHTML = data[3].price + "€";
+    name1 = data[3];
     name4 = document.querySelector('.name3').innerHTML = data[3].name;
-  })
-  data.forEach(element => {
+    
+  // Cinquième produit
     image = data[4];
     image5 = document.querySelector('.image4').innerHtml = image.imageUrl;
     varnish = data[4];
@@ -72,10 +73,9 @@ const fetchData = async() => {
     desc = data[4];
     desc5 = document.querySelector('.info4').innerHTML = desc.description;
     price = data[4];
-    price5 = document.querySelector('.price4').innerHTML = data[4].price;
-    name = data[4];
+    price5 = document.querySelector('.price4').innerHTML = data[4].price + "€";
+    name1 = data[4];
     name5 = document.querySelector('.name4').innerHTML = data[4].name;
-  });
 };
 
 fetchData();

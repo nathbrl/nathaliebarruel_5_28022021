@@ -16,36 +16,29 @@
         <div class="container">
             <header>
                 <!--logo-->
-                <a href="index.html">
+                <div>
                     <img src="./img/logo.png" alt="Logo Orinoco" class="logo">
-                </a>
+                </div>
                 <!--navbar-->
-                    <nav class="nav-links">
-                        <ul>
-                            <li><a href="index.html">Accueil</a></li>
-                            <li><a href="liste-articles.html">Nos articles</a></li>
-                            <li><a href="cart.html" class="cart"><i class="fas fa-shopping-cart"></i>&nbsp;Panier</a></li>
-                        </ul>
-                    </nav>
+                <nav class="nav-links">
+                    <ul>
+                        <li><a href="index.html">Nos articles</a></li>
+                        <li><a href="cart.html" class="cart"><i class="fas fa-shopping-cart"></i>&nbsp;Panier</a></li>
+                    </ul>
+                </nav>
             </header>
             <!--div présentation produits-->
-            <div id="page-produit">
+            <div class="page-produit">
                 <img src="" alt="mobilier" id="produits">
-                <p id="model"> <strong>Modèle:</strong></p>
-                <p id="vernis"> <strong><label for="pet-select">Choix du vernis:</label></strong>
-                    <select name="pets" id="pet-select">
-                        <option value="">select a color</option>
-                        <option value="Dark Oak">Dark Oak</option>
-                        <option value="Light Oak">Light Oak</option>
-                        <option value="Mahogany">Mahogany</option>
-                        <option value="Teak">Teak</option>
+                <h1 id="name"></h1>
+                <label for="option">Choix du vernis:</label>
+                    <select id='option'>
                     </select>
-                </p>
-                <p id="description"><strong>Description:</strong></p>
-                <p id="prix"><strong>Prix:</strong></p>
+                <p id="info"></p>
+                <h3 id="price"></h3>
                 <div>
                     <a href="cart.html"><div class="see-btn">Ajouter au panier</div></a>
-                    <a href="liste-articles.html"><div class="see-btn">Page précédente</div></a>
+                    <a href="index.html"><div class="see-btn">Page précédente</div></a>
                 </div>
             </div>
             <footer>
@@ -55,10 +48,10 @@
                     <li><a class="social" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
                     <li><a class="social" href="https://facebook.com/"><i class="fa fa-facebook"></i></a></li>
                     <li><a class="social" href="https://instagram.com/"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="contactez-nous.html">Contactez-nous</a></li>
+                    <li><a href="#contactez-nous">Contactez-nous</a></li>
                 </ul>
             </footer>
-            <script src="index.js"></script>
+            <script src="page-produit.js" defer></script>
         </div>
     </body>
 </html>
