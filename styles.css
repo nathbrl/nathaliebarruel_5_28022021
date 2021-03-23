@@ -4,7 +4,7 @@ body,html{
     padding: 0;
     width: 100%;
     font-family: "Merienda One", cursive;
-    background-image: url(../orinoco-frontend/img/background.webp);
+    background-image: url(img/background.webp);
     background-size: cover;
 }
 .container{
@@ -62,7 +62,6 @@ p{
 }
 .liste{
     background-color: rgba(242, 235, 221, 0.6);
-    align-content: center;
     border: solid 2px black;
     border-radius: 15px;
     text-align: center;
@@ -72,16 +71,18 @@ p{
     justify-content: center;
 }
 #cart-article, .page-produit{
-    background: rgba(242, 235, 221, 0.6);
+    background: rgba(242, 235, 221, 0.5);
     text-align: center;
     width: 850px;
-    height: 780px;
     display: flex;
     flex-direction: column;
     position: relative;
     left: 25%;
     margin-bottom: 30px;
     margin-top: 30px;
+}
+#cart-article{
+    height: 780px;
 }
 .varnish,
 .varnish1, .varnish2,
@@ -96,7 +97,7 @@ p{
     height: 180px;
     object-fit: cover;
 }
-.see-btn{
+.see-btn, .cart-btn{
     font-family: "Merienda One", cursive;
     font-size: 14px;
     text-align: center;
@@ -108,7 +109,7 @@ p{
     padding: 4px 8px 4px 8px;
     display: inline-block;
 }
-.see-btn:hover{
+.see-btn:hover, .cart-btn:hover{
     color: black;
     box-shadow: gray 3px 4px 2px;
 }
@@ -119,22 +120,22 @@ p{
     font-weight: bold;
 }
 #produits{
-    height: 450px;
+    padding: 30px 0 30px 0;
+    height: 500px;
+    width: 600px;
+    margin: auto;
 }
-table{
+table, tbody{
     border-collapse: collapse;
+    width: 850px;
 }
-  
 td{
     border: 1px solid black;
 }
-option{
+option, select{
     color: black;
     text-align: center;
-}
-table tbody{
-    width: 850px;
-    display: inherit;
+    font-family: "Merienda One", cursive;
 }
 /* MEDIA QUERIES*/
 /* PHONES */
@@ -182,6 +183,7 @@ table tbody{
     .liste{
         max-width: 605px;
         min-width: 330px;
+        width: 360px;
     }
     .image, .image1,
     .image2, .image3,
@@ -192,9 +194,16 @@ table tbody{
     p{
         font-size: 13px;
     }
-    table, tbody, tr{
+    table, tbody{
+        width: 350px;
         font-size: 12px;
-        display: inline;
+    }
+    tbody{
+        display: flex;
+        flex-direction: column;
+    }
+    .tr-one{
+        width: 365px;
     }
     td {
         width: 190px;
@@ -202,19 +211,15 @@ table tbody{
     select, option{
         width: 100px;
     }
-    .see-btn{
+    .see-btn, .cart-btn{
         width: 60px;
         height: 50px;
         font-size: 11px;
     }
     /* PAGE PRODUIT */
     .page-produit, #cart-article{
-        width: 355px;
-        height: auto;
         position: unset;
         display: flex;
-        justify-content: center;
-        align-items: center;
         margin: auto;
     }
     #produits{
@@ -231,7 +236,6 @@ table tbody{
     }
     table{
         height: auto;
-        display: block;
         font-size: 12px;
     }
     #main{
@@ -259,7 +263,7 @@ table tbody{
     }
     .page-produit, #cart-article{
         position: initial;
-        height: 895px;
+        height: 855px;
         margin: auto;
         width: auto;
     }

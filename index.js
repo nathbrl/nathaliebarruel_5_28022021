@@ -1,12 +1,15 @@
 let data;
 
 // API REQUEST
-const fetchData = async() => {
+const fetchProduct = async() => {
   data = await fetch ('http://localhost:3000/api/furniture')
     .then(res => res.json())
-      console.log(data);
+      //console.log(data);
   data.forEach(element => {
     console.log(element.name);
+
+    // Premier produit
+    
     // IMAGE
   const image = data[0];
   const image1 = document.querySelector('.image');
@@ -78,4 +81,4 @@ const fetchData = async() => {
     name5 = document.querySelector('.name4').innerHTML = data[4].name;
 };
 
-fetchData();
+fetchProduct();

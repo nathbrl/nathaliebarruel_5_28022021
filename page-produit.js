@@ -1,7 +1,7 @@
 
 // Récupération id dans l'url
-var url_string = window.location.href;
-var url = new URL(url_string);
+var urlLoc = window.location.href;
+var url = new URL(urlLoc);
 var link = url.searchParams.get('id');
 //console.log(link);
 
@@ -26,7 +26,7 @@ const fetchId = async() => {
     firstOption.setAttribute('disabled', 'disabled');
     firstOption.setAttribute('selected', "true");
     firstOption.setAttribute('value', 0 );
-    firstOption.textContent = 'Choisissez votre vernis';
+    firstOption.textContent = 'Choisissez un vernis';
     option.appendChild(firstOption);
     //console.log(firstOption);
         
