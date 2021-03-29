@@ -1,4 +1,3 @@
-
 // Récupération id dans l'url
 var urlLoc = window.location.href;
 var url = new URL(urlLoc);
@@ -6,7 +5,7 @@ var link = url.searchParams.get('id');
 //console.log(link);
 
 // API request
-const fetchId = async() => {
+const fetchFurniture = async() => {
   data = await fetch('http://localhost:3000/api/furniture/'+ link)
   .then(resp => resp.json())
   //console.log(data)
@@ -17,7 +16,7 @@ const fetchId = async() => {
     image.src = data.imageUrl
     //console.log(image);
 
-    //Ajout du modèle  PROBLEME AVEC LE NAME
+    //Ajout du modèle
     let title = document.querySelector('#name');
     title.innerHTML = data.name; 
 
@@ -51,4 +50,7 @@ const fetchId = async() => {
   });
 };
 
-fetchId();
+// COMMENTAIRE EN ANGLAIS
+// CONST # LEt
+
+fetchFurniture();

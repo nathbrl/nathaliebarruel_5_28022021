@@ -31,14 +31,45 @@
                     </nav>
             </header>
             <div id="cart-article">
-                <table>
-                    <tr>
-                        <td>Produit</td>
-                        <td>Prix</td>
-                        <td>Quantité</td>
-                        <td>Total</td>
-                    </tr>
-                </table>
+                <div class="product-header">
+                    <h5 class="image-url">IMAGE</h5>
+                    <h5 class="name-product">MODÈLE</h5>
+                    <h5 class="price"><span>PRIX</span></h5>
+                </div>
+                <div class="products">
+                </div>
+                <section class="wrapperForm">
+                    <h3>Veuillez remplir le formulaire pour finaliser votre commande</h3>
+                    <form class="formulaire" id="form" method="POST" action="http://localhost:3000/api/furniture/order">
+                        <div>
+                            <label for="lastName" class="formLabel"> Nom :
+                                <input type="text" id="lastName" placeholder="example: Dupont"  class="formInput">
+                            </label>
+                        </div>
+                        <div>
+                            <label for="firstName" class="formLabel"> Prénom :
+                                <input type="text" id="firstName" placeholder="example: Pierre"  class="formInput">
+                            </label>
+                        </div>
+                        <div>
+                            <label for="adresse" class="formLabel"> Adresse :
+                                <input type="text" id="adresse" placeholder="example: 5 Rue de la loi "  class="formInput">
+                            </label>
+                        </div>
+                        <div>
+                            <label for="city" class="formLabel"> Ville :
+                                <input type="text" id="city" placeholder="example: Lille"  class="formInput">
+                            </label>
+                        </div>
+                        <div>
+                            <label for="email" class="formLabel"> E-mail :
+                                <input type="email" id="email" placeholder=" example: Mon_mail@hébergeur.com"  class="formInput">
+                            </label>
+                        </div>
+                    </form>
+                    <div  id="Confirm"><button  type="button" class="btn-validation" id="submit">Valider ma commande</button></div>
+                </section>   
+
             </div>
             <footer>
                 <!--footer nav-->
