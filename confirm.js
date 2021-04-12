@@ -1,3 +1,5 @@
-let containerConfirmation = document.querySelector("#confirmation");
+//ITEM RECOVERY FROM LOCALSTORAGE
 
-//Récupération localstorage
+
+// CLEARING LOCALSTORAGE
+localStorage.clear();

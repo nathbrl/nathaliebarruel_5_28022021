@@ -8,7 +8,7 @@ const fetchProduct = async() => {
   data.forEach(element => {
     console.log(element.name);
 
-    // Premier produit
+    // FIRST PRODUCT
     
     // IMAGE
   const image = data[0];
@@ -32,7 +32,7 @@ const fetchProduct = async() => {
     price1.innerHTML = price.price + "€";
   });
 
-  // Deuxième produit 
+  // SECOND PRODUCT 
     image = data[1];
     image2 = document.querySelector('.image1').innerHtml = image.imageUrl;
     varnish = data[1];
@@ -44,7 +44,7 @@ const fetchProduct = async() => {
     name1 = data[1];
     name2 = document.querySelector('.name1').innerHTML = data[1].name;
 
-  // Troisième produit
+  // THIRD PRODUCT
     image = data[2];
     image3 = document.querySelector('.image2').innerHtml = image.imageUrl;
     varnish = data[2];
@@ -56,7 +56,7 @@ const fetchProduct = async() => {
     name1 = data[2];
     name3 = document.querySelector('.name2').innerHTML = data[2].name;
 
-  // Quatrième produit
+  // FOURTH  PRODUCT
     image = data[3];
     image4 = document.querySelector('.image3').innerHtml = image.imageUrl;
     varnish = data[3];
@@ -68,7 +68,7 @@ const fetchProduct = async() => {
     name1 = data[3];
     name4 = document.querySelector('.name3').innerHTML = data[3].name;
     
-  // Cinquième produit
+  // FIFTH PRODUCT
     image = data[4];
     image5 = document.querySelector('.image4').innerHtml = image.imageUrl;
     varnish = data[4];

@@ -13,7 +13,7 @@
         <title>Orinoco: Panier</title>
     </head>
     <body>
-        <div class="container" class="main">
+        <div class="container main">
             <header>
                 <a href="index.html">
                     <img src="./img/logo.png" alt="Logo Orinoco" class="logo">
@@ -40,34 +40,34 @@
                 </div>
                 <section class="wrapperForm">
                     <h3>Veuillez remplir le formulaire pour finaliser votre commande</h3>
-                    <form class="formulaire" id="form" method="POST" action="http://localhost:3000/api/furniture/order">
+                    <form class="formulaire" id="commande" method="POST" action="http://localhost:3000/api/furniture/order">
                         <div>
                             <label for="lastName" class="formLabel"> Nom :
-                                <input type="text" id="lastName" placeholder="example: Dupont"  class="formInput">
+                                <input type="text" id="lastName" placeholder="example: Dupont" maxlength="30" class="formInput" required>
                             </label>
                         </div>
                         <div>
                             <label for="firstName" class="formLabel"> Prénom :
-                                <input type="text" id="firstName" placeholder="example: Pierre"  class="formInput">
+                                <input type="text" id="firstName" placeholder="example: Pierre" maxlength="30" class="formInput" required>
                             </label>
                         </div>
                         <div>
                             <label for="adresse" class="formLabel"> Adresse :
-                                <input type="text" id="adresse" placeholder="example: 5 Rue de la loi "  class="formInput">
+                                <input type="text" id="adresse" placeholder="example: 5 Rue de la loi "  class="formInput" required>
                             </label>
                         </div>
                         <div>
                             <label for="city" class="formLabel"> Ville :
-                                <input type="text" id="city" placeholder="example: Lille"  class="formInput">
+                                <input type="text" id="city" placeholder="example: Lille"  class="formInput" required>
                             </label>
                         </div>
                         <div>
                             <label for="email" class="formLabel"> E-mail :
-                                <input type="email" id="email" placeholder=" example: Mon_mail@hébergeur.com"  class="formInput">
+                                <input type="email" id="email" placeholder=" example: Mon_mail@hébergeur.com"  class="formInput" required>
                             </label>
                         </div>
                     </form>
-                    <div  id="Confirm"><button  type="button" class="btn-validation" id="submit">Valider ma commande</button></div>
+                    <div><button  type="submit" class="btn-validation" id="envoyer">Valider ma commande</button></div>
                 </section>   
 
             </div>

@@ -4,7 +4,6 @@ body,html{
     padding: 0;
     font-family: "Merienda One", cursive;
     background-image: url(img/background.webp);
-    background-size: cover;
 }
         /* -------------------------- INDEX PAGE -----------------------*/
 .container{
@@ -29,9 +28,7 @@ header ul a {
 }
 #main, .main{
     text-align: center;
-    background: rgba(242, 235, 221, 0.5);
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,7 +92,7 @@ p{
     height: 150px;
     object-fit: cover;
 }
-.see-btn, .cart-btn{
+.see-btn, .cart-btn, .remove{
     font-family: "Merienda One", cursive;
     font-size: 14px;
     text-align: center;
@@ -106,6 +103,7 @@ p{
     margin-bottom: 15px;
     padding: 4px 8px 4px 8px;
     display: inline-block;
+    outline: none;
 }
 .see-btn:hover, .cart-btn:hover{
     color: black;
@@ -134,6 +132,14 @@ option, select{
     color: black;
     text-align: center;
     font-family: "Merienda One", cursive;
+}
+.remove{
+    background-color: rgb(192, 50, 15);
+    outline: none;
+}
+.remove:hover{
+    background-color: white;
+    color: red;
 }
 /* -------------------------- CART PAGE -----------------------*/
 #cart-article{
@@ -180,9 +186,6 @@ option, select{
 .image-url{
     text-align: center;
     width: 20%;
-}
-.fas.fa-trash{
-    color: #b90000;
 }
 /* -------------------------- FORM -----------------------*/
 .wrapperForm {
@@ -247,6 +250,7 @@ option, select{
     margin: 20px;
     padding: 5px 15px;
     font-family: "Merienda One", cursive;
+    outline: none;
 }
 /* -------------------------- CONFIRMATION PAGE -----------------------*/
 #confirmation{
@@ -298,39 +302,49 @@ option, select{
     /* PAGE ARTICLES*/
     .liste{
         max-width: 605px;
-        min-width: 330px;
+        min-width: 320px;
         width: 360px;
     }
     .image, .image1,
     .image2, .image3,
     .image4{
-        width: 90px;
-        height: auto;
+        margin-top: 5px;
+        width: 100px;
+        height: 80px;
     }
     p{
         font-size: 13px;
     }
     table, tbody{
-        width: 350px;
+        width: 360px;
         font-size: 12px;
+        margin: 0;
     }
     tbody{
         display: flex;
         flex-direction: column;
     }
-    .tr-one{
+    .tr-one td{
         width: 365px;
-    }
-    td {
-        width: 190px;
     }
     select, option{
         width: 100px;
     }
     .see-btn, .cart-btn{
-        width: 60px;
-        height: 50px;
         font-size: 11px;
+    }
+    tr {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+    }
+    td {
+        border: none;
+    }
+    div .btn {
+        display: flex;
+        justify-content: space-evenly;
+        align-content: space-evenly;
     }
     /* PAGE PRODUIT */
     .page-produit, #cart-article{
@@ -339,6 +353,7 @@ option, select{
         flex-direction: column;
         justify-content: space-evenly;
         flex-wrap: wrap;
+        left: 0%;
         width: 100%;
     }
     #produits{
@@ -349,10 +364,21 @@ option, select{
     .product{
         font-size: 12px;
     }
-    .fas.fa-trash{
-        font-size: 15px;
-        margin-left: 10px;
-        margin-right: 5px;
+    .remove{
+        font-size: 11px;
+        border: solid 2px white;
+        border-radius: 20px;
+        color: white;
+        margin-bottom: 15px;
+        padding: 2px 4px 2px 4px;
+    }
+    .container{
+        position: inherit;
+    }
+    td .varnish2{
+        display: flex;
+        flex-wrap: wrap;
+        width: 10px;
     }
 }
 /* TABLETTES */
