@@ -1,5 +1,2 @@
-//ITEM RECOVERY FROM LOCALSTORAGE
-
-
 // CLEARING LOCALSTORAGE
-localStorage.clear();
+localStorage.clear()*/

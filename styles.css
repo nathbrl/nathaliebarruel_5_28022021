@@ -3,7 +3,8 @@ body,html{
     margin: 0;
     padding: 0;
     font-family: "Merienda One", cursive;
-    background-image: url(img/background.webp);
+    background-image: url(images/background.webp);
+    background-size: cover;
 }
         /* -------------------------- INDEX PAGE -----------------------*/
 .container{
@@ -79,20 +80,16 @@ p{
     margin-bottom: 30px;
     margin-top: 30px;
 }
-.varnish,
-.varnish1, .varnish2,
-.varnish3, .varnish4{
+.varnish, .varnish1, .varnish2, .varnish3, .varnish4 {
     font-family: "Merienda One", cursive;
     font-size: 13px;
 }
-.image, .image1,
-.image2, .image3,
-.image4{
+.image, .image1, .image2, .image3, .image4 {
     width: 200px;
     height: 150px;
     object-fit: cover;
 }
-.see-btn, .cart-btn, .remove{
+.see-btn, .add-to-cart-btn, .remove{
     font-family: "Merienda One", cursive;
     font-size: 14px;
     text-align: center;
@@ -105,15 +102,12 @@ p{
     display: inline-block;
     outline: none;
 }
-.see-btn:hover, .cart-btn:hover{
+.see-btn:hover, .add-to-cart-btn:hover{
     color: black;
     box-shadow: gray 3px 4px 2px;
 }
-.texte{
+.name, .name1, .name2, .name3, .name4{
     text-align: center;
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
 }
 #produits{
     padding: 30px 0 30px 0;
@@ -133,14 +127,6 @@ option, select{
     text-align: center;
     font-family: "Merienda One", cursive;
 }
-.remove{
-    background-color: rgb(192, 50, 15);
-    outline: none;
-}
-.remove:hover{
-    background-color: white;
-    color: red;
-}
 /* -------------------------- CART PAGE -----------------------*/
 #cart-article{
     background: rgba(242, 235, 221, 0.5);
@@ -156,15 +142,11 @@ option, select{
     margin-bottom: 25px;
     border-bottom: solid 2px black;
 }
-.products i {
-    font-size: 20px;
-    margin-left: 20px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-.products div{
-    margin-left: 10px;
-    margin-right: 10px;
+
+.cart-list div{
+    margin: auto;
+    padding: auto;
+    width: 100%;
 }
 .product-header{
     display: flex;
@@ -175,6 +157,7 @@ option, select{
 .cart-total{
     display: flex;
     justify-content: flex-end;
+    flex-wrap: wrap;
     padding: 10px 0;
 }
 .total-item{
@@ -187,10 +170,19 @@ option, select{
     text-align: center;
     width: 20%;
 }
+.suppress-btn{
+    font-size: 12px;
+    margin-left: 20px;
+    background: rgb(187, 62, 62);
+    color: whitesmoke;
+    padding: 5px;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+}
 /* -------------------------- FORM -----------------------*/
 .wrapperForm {
     padding: 0 15px;
-    margin-top: 30px;
     margin-bottom: 40px;
 }
 .wrapperForm h2 {
@@ -202,25 +194,24 @@ option, select{
 }
   
 .formulaire {
-    padding: 0 15px;
+    padding: 0 15px 5px;
     max-width: 700px;
     margin: auto;
-    border: solid 1px black;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(107, 112, 92, 0.8);
+    text-align: left;
 }
 .formulaire .formInput {
+    font-family: "Merienda One", cursive;
     display: block;
     width: 100%;
-    margin-top: 5px;
-    padding: 5px 5px;
-    background-color: rgba(107, 112, 92, 0.8);;
-    font-size: 1em;
-    border-radius: 5px;
-    box-shadow: 0 0 2px 1px #f2f2f2;
+    margin: auto;
+    padding: auto;
+    font-size: 15px;
+    border-radius: 10px;
     border: none;
-    color: white;
-    text-align: center;
+    color: black;
+    text-align: left;
 }
 .formulaire .formLabel {
     position: relative;
@@ -239,19 +230,30 @@ option, select{
 }
 ::placeholder{
     font-family: "Merienda One", cursive;
-    color: rgba(255, 255, 255, 0.5);
+    color: gray;
 }
 .btn-validation{
     background-color: rgb(107, 112, 92);
-    color: #f3e9f1;
-    border-radius: 30px;
-    height: 50px;
+    color: whitesmoke;
+    border-radius: 3em;
+    height: 40px;
     font-size: 1.1em;
     margin: 20px;
     padding: 5px 15px;
     font-family: "Merienda One", cursive;
+    cursor: pointer;
+}
+input{
     outline: none;
 }
+/*
+.formInput:invalid{
+    border: solid 2px rgba(255, 0, 0, 0.4);
+}
+.formInput:valid{
+    border: solid 2px rgba(0, 255, 0, 0.4);
+}*/
+
 /* -------------------------- CONFIRMATION PAGE -----------------------*/
 #confirmation{
     background: rgba(242, 235, 221, 0.5);
@@ -285,16 +287,12 @@ option, select{
     .text{
         margin-bottom: 30px;
     }
-    .varnish,
-    .varnish1, .varnish2,
-    .varnish3, .varnish4,
-    .info, .info1, .info2,
-    .nfo3, .info4{
+    .varnish, .varnish1, .varnish2, .varnish3
+    .varnish4, .info, .info1, .info2,
+    .info3, .info4 {
         font-size: 12px;
     }
-    .varnish,
-    .varnish1, .varnish2,
-    .varnish3, .varnish4{
+    .varnish {
         width: 50px;
         margin-left: auto;
         margin-right: auto;
@@ -305,9 +303,7 @@ option, select{
         min-width: 320px;
         width: 360px;
     }
-    .image, .image1,
-    .image2, .image3,
-    .image4{
+    .image, .image1, .image2, .image3, .image4 {
         margin-top: 5px;
         width: 100px;
         height: 80px;
@@ -327,10 +323,13 @@ option, select{
     .tr-one td{
         width: 365px;
     }
+    .tr-one {
+        display: none;
+    }
     select, option{
         width: 100px;
     }
-    .see-btn, .cart-btn{
+    .see-btn, .add-to-cart-btn{
         font-size: 11px;
     }
     tr {
@@ -361,9 +360,6 @@ option, select{
         width: 300px;
         height: 180px;
     }
-    .product{
-        font-size: 12px;
-    }
     .remove{
         font-size: 11px;
         border: solid 2px white;
@@ -374,11 +370,6 @@ option, select{
     }
     .container{
         position: inherit;
-    }
-    td .varnish2{
-        display: flex;
-        flex-wrap: wrap;
-        width: 10px;
     }
 }
 /* TABLETTES */
@@ -408,11 +399,8 @@ option, select{
     td {
         width: 130px;
     }
-    .image, .image1,
-    .image2, .image3,
-    .image4{
+    .image, .image1, .image2, .image3, .image4 {
         width: 240px;
-        height: auto;
     }
     .page-produit, #cart-article{
         position: initial;

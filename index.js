@@ -1,84 +1,113 @@
-let data;
+function displayFirstProduct(product) {
+  const furniture =  product[0];
+  const id = product[0]._id;
 
-// API REQUEST
-const fetchProduct = async() => {
-  data = await fetch ('http://localhost:3000/api/furniture')
-    .then(res => res.json())
-      //console.log(data);
-  data.forEach(element => {
-    console.log(element.name);
-
-    // FIRST PRODUCT
-    
-    // IMAGE
-  const image = data[0];
   const image1 = document.querySelector('.image');
-    image1.innerHtml = image.imageUrl;
-    //NAME
-  const name = data[0];
+  image1.innerHtml = furniture.imageUrl;
+
   const name1 = document.querySelector('.name');
-    name1.innerHTML = name.name;
-    // VARNISH
-  const varnish = data[0];
+  name1.innerHTML = furniture.name;
+
   const varnish1 = document.querySelector('.varnish');
-  varnish1.innerHTML = varnish.varnish;
-    // DESCRIPTION
-  const desc = data[0];
+  varnish1.innerHTML = furniture.varnish;
+
   const desc1 = document.querySelector('.info');
-    desc1.innerHTML = desc.description;
-    // PRICE
-  const price = data[0];
+  desc1.innerHTML = furniture.description;
+
   const price1 = document.querySelector('.price');
-    price1.innerHTML = price.price + "€";
-  });
+  price1.innerHTML = furniture.price + "€";
+}
 
-  // SECOND PRODUCT 
-    image = data[1];
-    image2 = document.querySelector('.image1').innerHtml = image.imageUrl;
-    varnish = data[1];
-    varnish2 = document.querySelector('.varnish1').innerHTML = varnish.varnish;
-    desc = data[1];
-    desc2 = document.querySelector('.info1').innerHTML = desc.description;
-    price = data[1];
-    price2 = document.querySelector('.price1').innerHTML = data[1].price + "€";
-    name1 = data[1];
-    name2 = document.querySelector('.name1').innerHTML = data[1].name;
+function displaySecondProduct(product) {
+  const furniture = product[1];
+  const id = product[1]._id;
 
-  // THIRD PRODUCT
-    image = data[2];
-    image3 = document.querySelector('.image2').innerHtml = image.imageUrl;
-    varnish = data[2];
-    varnish3 = document.querySelector('.varnish2').innerHTML = varnish.varnish;
-    desc = data[2];
-    desc3 = document.querySelector('.info2').innerHTML = desc.description;
-    price = data[2];
-    price3 = document.querySelector('.price2').innerHTML = data[2].price + "€";
-    name1 = data[2];
-    name3 = document.querySelector('.name2').innerHTML = data[2].name;
+  const image1 = document.querySelector('.image1');
+  image1.innerHtml = furniture.imageUrl;
 
-  // FOURTH  PRODUCT
-    image = data[3];
-    image4 = document.querySelector('.image3').innerHtml = image.imageUrl;
-    varnish = data[3];
-    varnish4 = document.querySelector('.varnish3').innerHTML = varnish.varnish;
-    desc = data[3];
-    desc4 = document.querySelector('.info3').innerHTML = desc.description;
-    price = data[3];
-    price4 = document.querySelector('.price3').innerHTML = data[3].price + "€";
-    name1 = data[3];
-    name4 = document.querySelector('.name3').innerHTML = data[3].name;
-    
-  // FIFTH PRODUCT
-    image = data[4];
-    image5 = document.querySelector('.image4').innerHtml = image.imageUrl;
-    varnish = data[4];
-    varnish5 = document.querySelector('.varnish4').innerHTML = varnish.varnish;
-    desc = data[4];
-    desc5 = document.querySelector('.info4').innerHTML = desc.description;
-    price = data[4];
-    price5 = document.querySelector('.price4').innerHTML = data[4].price + "€";
-    name1 = data[4];
-    name5 = document.querySelector('.name4').innerHTML = data[4].name;
-};
+  const name1 = document.querySelector('.name1');
+  name1.innerHTML = furniture.name;
 
-fetchProduct();
+  const varnish1 = document.querySelector('.varnish1');
+  varnish1.innerHTML = furniture.varnish;
+
+  const desc1 = document.querySelector('.info1');
+  desc1.innerHTML = furniture.description;
+
+  const price1 = document.querySelector('.price1');
+  price1.innerHTML = furniture.price + "€";
+}
+
+function displayThirdProduct(product) {
+  const furniture = product[2];
+  const id = product[2]._id;
+
+  const image1 = document.querySelector('.image2');
+  image1.innerHtml = furniture.imageUrl;
+
+  const name1 = document.querySelector('.name2');
+  name1.innerHTML = furniture.name;
+
+  const varnish1 = document.querySelector('.varnish2');
+  varnish1.innerHTML = furniture.varnish;
+
+  const desc1 = document.querySelector('.info2');
+  desc1.innerHTML = furniture.description;
+
+  const price1 = document.querySelector('.price2');
+  price1.innerHTML = furniture.price + "€";
+}
+
+function displayFourthProduct(product) {
+  const furniture = product[3];
+  const id = product[3]._id;
+
+  const image1 = document.querySelector('.image3');
+  image1.innerHtml = furniture.imageUrl;
+
+  const name1 = document.querySelector('.name3');
+  name1.innerHTML = furniture.name;
+
+  const varnish1 = document.querySelector('.varnish3');
+  varnish1.innerHTML = furniture.varnish;
+
+  const desc1 = document.querySelector('.info3');
+  desc1.innerHTML = furniture.description;
+
+  const price1 = document.querySelector('.price3');
+  price1.innerHTML = furniture.price + "€";
+}
+
+function displayFifthProduct(product) {
+  const furniture = product[4];
+  const id = product[4]._id;
+
+  const image1 = document.querySelector('.image4');
+  image1.innerHtml = furniture.imageUrl;
+
+  const name1 = document.querySelector('.name4');
+  name1.innerHTML = furniture.name;
+
+  const varnish1 = document.querySelector('.varnish4');
+  varnish1.innerHTML = furniture.varnish;
+
+  const desc1 = document.querySelector('.info4');
+  desc1.innerHTML = furniture.description;
+
+  const price1 = document.querySelector('.price4');
+  price1.innerHTML = furniture.price + "€";
+}
+
+function fetchFurnitures() { 
+  fetch("http://localhost:3000/api/furniture")
+  .then((res) => res.json())
+  .then(furniture => {
+    displayFirstProduct(furniture);
+    displaySecondProduct(furniture);
+    displayThirdProduct(furniture);
+    displayFourthProduct(furniture);
+    displayFifthProduct(furniture);
+  })
+  .catch(error => console.log(error));
+}
+fetchFurnitures();

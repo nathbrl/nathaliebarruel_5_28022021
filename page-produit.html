@@ -17,14 +17,14 @@
             <header>
                 <!--logo-->
                 <div>
-                    <a href="index.html"><img src="./img/logo.png" alt="Logo Orinoco" class="logo"></a> 
+                    <a href="index.html"><img src="images/logo.png" alt="Logo Orinoco" class="logo"></a> 
                 </div>
                 <!--navbar-->
                 <nav class="nav-links">
                     <ul>
                         <li><a href="index.html">Nos articles</a></li>
                         <li>
-                            <a href="cart.html" class="cart"><i class="fas fa-shopping-cart"><sup><span class="qty">0</span></sup></i>&nbsp;panier
+                            <a href="page-panier.html" class="cart"><i class="fas fa-shopping-cart"><sup><span class="quantity">0</span></sup></i>&nbsp;panier
                             </a>
                         </li>
                     </ul>
@@ -36,13 +36,12 @@
                 <h1 id="name"></h1>
                 <p>
                     <label for="option">Vernis disponibles:</label>
-                        <select id='option'>
-                        </select>
+                        <select id='option'></select>
                 </p>
                 <p id="info"></p>
                 <h3 id="price"></h3>
                 <div class="btn">
-                    <a href="#"><div class="cart-btn">Ajouter au panier</div></a>
+                    <a href="#"><div class="add-to-cart-btn">Ajouter au panier</div></a>
                     <a href="index.html"><div class="see-btn">Page précédente</div></a>
                 </div>
             </div>
@@ -57,7 +56,7 @@
                 </ul>
             </footer>
             <script src="page-produit.js" defer></script>
-            <script src="cart.js"></script>
+            <script src="cart.js" defer></script>
         </div>
     </body>
 </html>

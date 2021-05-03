@@ -16,15 +16,15 @@
         <div class="container main">
             <header>
                 <a href="index.html">
-                    <img src="./img/logo.png" alt="Logo Orinoco" class="logo">
+                    <img src="images/logo.png" alt="Logo Orinoco" class="logo">
                 </a>
                 <!--navbar-->
                     <nav class="nav-links">
                         <ul>
                             <li><a href="index.html">Nos articles</a></li>
                             <li>
-                                <a href="cart.html" class="cart">
-                                    <i class="fas fa-shopping-cart"><sup><span class="qty">0</span></sup></i>&nbsp;Panier
+                                <a href="page-panier.html" class="cart">
+                                    <i class="fas fa-shopping-cart"><sup><span class="quantity">0</span></sup></i>&nbsp;Panier
                                 </a>
                             </li>
                         </ul>
@@ -35,39 +35,40 @@
                     <h5 class="image-url">IMAGE</h5>
                     <h5 class="name-product">MODÈLE</h5>
                     <h5 class="price"><span>PRIX</span></h5>
+                    <h5 class="price"><span>RETIRER</span></h5>
                 </div>
-                <div class="products">
+                <div class="cart-list">
                 </div>
                 <section class="wrapperForm">
-                    <h3>Veuillez remplir le formulaire pour finaliser votre commande</h3>
-                    <form class="formulaire" id="commande" method="POST" action="http://localhost:3000/api/furniture/order">
+                    <h3>N'oubliez pas de remplir ce formulaire pour finaliser votre commande</h3>
+                    <form class="formulaire" id="form-order" method="POST" action="http://localhost:3000/api/furniture/order">
                         <div>
                             <label for="lastName" class="formLabel"> Nom :
-                                <input type="text" id="lastName" placeholder="example: Dupont" maxlength="30" class="formInput" required>
+                                <input type="text" id="lastname" placeholder="example: Dupont" pattern="[a-zA-ZàâæçéèêëîïôœùûüÿÀÂÆÇnÉÈÊËÎÏÔŒÙÛÜŸ-]+" class="formInput" required>
                             </label>
                         </div>
                         <div>
                             <label for="firstName" class="formLabel"> Prénom :
-                                <input type="text" id="firstName" placeholder="example: Pierre" maxlength="30" class="formInput" required>
+                                <input type="text" id="firstname" placeholder="example: Pierre" patter="[A-Za-zàáâãäåçèéêëìíîïðòóôõöùúûüýÿñÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÒÓÔÕÖÙÚÛÜÝŸÑ -]+" class="formInput" required>
                             </label>
                         </div>
                         <div>
                             <label for="adresse" class="formLabel"> Adresse :
-                                <input type="text" id="adresse" placeholder="example: 5 Rue de la loi "  class="formInput" required>
+                                <input type="text" id="address" placeholder="example: 5 Rue de la loi " pattern="[#.0-9a-zA-Z\s,-]+" class="formInput" required>
                             </label>
                         </div>
                         <div>
                             <label for="city" class="formLabel"> Ville :
-                                <input type="text" id="city" placeholder="example: Lille"  class="formInput" required>
+                                <input type="text" id="city" placeholder="example: Lille" pattern="[A-Za-zàáâãäåçèéêëìíîïðòóôõöùúûüýÿñÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÒÓÔÕÖÙÚÛÜÝŸÑ -]+" class="formInput" required>
                             </label>
                         </div>
                         <div>
                             <label for="email" class="formLabel"> E-mail :
-                                <input type="email" id="email" placeholder=" example: Mon_mail@hébergeur.com"  class="formInput" required>
+                                <input type="email" id="email" placeholder=" example: Mon_mail@hébergeur.com" class="formInput" required>
                             </label>
                         </div>
                     </form>
-                    <div><button  type="submit" class="btn-validation" id="envoyer">Valider ma commande</button></div>
+                    <div><button type="submit" class="btn-validation" id="send-order" value="order">Valider ma commande</button></div>
                 </section>   
 
             </div>
@@ -81,7 +82,7 @@
                     <li><a href="contactez-nous.html">Contactez-nous</a></li>
                 </ul>
             </footer>
-            <script src="cart.js" defer></script>
         </div>
+        <script src="cart.js"></script>
     </body>
 </html>
