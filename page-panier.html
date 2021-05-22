@@ -34,41 +34,41 @@
                 <div class="product-header">
                     <h5 class="image-url">IMAGE</h5>
                     <h5 class="name-product">MODÈLE</h5>
-                    <h5 class="price"><span>PRIX</span></h5>
-                    <h5 class="price"><span>RETIRER</span></h5>
+                    <h5 class="">PRIX</h5>
                 </div>
                 <div class="cart-list">
                 </div>
                 <section class="wrapperForm">
                     <h3>N'oubliez pas de remplir ce formulaire pour finaliser votre commande</h3>
-                    <form class="formulaire" id="form-order" method="POST" action="http://localhost:3000/api/furniture/order">
+                    <form class="formulaire" id="form-order">
                         <div>
                             <label for="lastName" class="formLabel"> Nom :
-                                <input type="text" id="lastname" placeholder="example: Dupont" pattern="[a-zA-ZàâæçéèêëîïôœùûüÿÀÂÆÇnÉÈÊËÎÏÔŒÙÛÜŸ-]+" class="formInput" required>
+                                <input type="text" id="lastname" placeholder="Dupont" class="formInput" required>
                             </label>
                         </div>
                         <div>
                             <label for="firstName" class="formLabel"> Prénom :
-                                <input type="text" id="firstname" placeholder="example: Pierre" patter="[A-Za-zàáâãäåçèéêëìíîïðòóôõöùúûüýÿñÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÒÓÔÕÖÙÚÛÜÝŸÑ -]+" class="formInput" required>
+                                <input type="text" id="firstname" placeholder="Pierre" class="formInput" required>
                             </label>
                         </div>
                         <div>
                             <label for="adresse" class="formLabel"> Adresse :
-                                <input type="text" id="address" placeholder="example: 5 Rue de la loi " pattern="[#.0-9a-zA-Z\s,-]+" class="formInput" required>
+                                <input type="text" id="address" placeholder="5 Rue de la loi " class="formInput" required>
                             </label>
                         </div>
                         <div>
                             <label for="city" class="formLabel"> Ville :
-                                <input type="text" id="city" placeholder="example: Lille" pattern="[A-Za-zàáâãäåçèéêëìíîïðòóôõöùúûüýÿñÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÒÓÔÕÖÙÚÛÜÝŸÑ -]+" class="formInput" required>
+                                <input type="text" id="city" placeholder="Lille"  class="formInput" required>
                             </label>
                         </div>
                         <div>
                             <label for="email" class="formLabel"> E-mail :
-                                <input type="email" id="email" placeholder=" example: Mon_mail@hébergeur.com" class="formInput" required>
+                                <input type="email" id="email" placeholder="Mon_mail@hébergeur.com" class="formInput" required>
                             </label>
                         </div>
+                        <div class="order-submit"><button type="submit" class="btn-validation" id="send-order" value="order">Valider ma commande</button></div>
                     </form>
-                    <div><button type="submit" class="btn-validation" id="send-order" value="order">Valider ma commande</button></div>
+                    
                 </section>   
 
             </div>

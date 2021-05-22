@@ -89,7 +89,7 @@ p{
     height: 150px;
     object-fit: cover;
 }
-.see-btn, .add-to-cart-btn, .remove{
+.see-btn, .add-to-cart-btn{
     font-family: "Merienda One", cursive;
     font-size: 14px;
     text-align: center;
@@ -142,13 +142,7 @@ option, select{
     margin-bottom: 25px;
     border-bottom: solid 2px black;
 }
-
-.cart-list div{
-    margin: auto;
-    padding: auto;
-    width: 100%;
-}
-.product-header{
+.product-header, .cart-product{
     display: flex;
     justify-content: space-between;
     border-bottom: solid 4px black;
@@ -160,30 +154,23 @@ option, select{
     flex-wrap: wrap;
     padding: 10px 0;
 }
-.total-item{
-    width: 60%;
-}
-.name-product{
-    width: 20%;
-}
-.image-url{
-    text-align: center;
-    width: 20%;
-}
 .suppress-btn{
     font-size: 12px;
     margin-left: 20px;
-    background: rgb(187, 62, 62);
+    background: rgb(180, 62, 62);
     color: whitesmoke;
     padding: 5px;
     width: 80px;
-    height: 30px;
     cursor: pointer;
+    font-family: "Merienda One", cursive;
 }
 /* -------------------------- FORM -----------------------*/
 .wrapperForm {
     padding: 0 15px;
     margin-bottom: 40px;
+}
+.hidden{
+    display: none;
 }
 .wrapperForm h2 {
     font-size: 1.5em;
@@ -195,7 +182,7 @@ option, select{
   
 .formulaire {
     padding: 0 15px 5px;
-    max-width: 700px;
+    max-width: 600px;
     margin: auto;
     border-radius: 20px;
     background-color: rgba(107, 112, 92, 0.8);
@@ -226,22 +213,24 @@ option, select{
     color: red;
 }
   .formulaire div {
-    margin: 20px 0;
+    padding: 10px 0;
 }
 ::placeholder{
     font-family: "Merienda One", cursive;
     color: gray;
 }
 .btn-validation{
-    background-color: rgb(107, 112, 92);
-    color: whitesmoke;
+    color: rgb(107, 112, 92);
     border-radius: 3em;
     height: 40px;
-    font-size: 1.1em;
-    margin: 20px;
+    font-size: 1em;
     padding: 5px 15px;
     font-family: "Merienda One", cursive;
     cursor: pointer;
+}
+.order-submit{
+    display: flex;
+    justify-content: center;
 }
 input{
     outline: none;

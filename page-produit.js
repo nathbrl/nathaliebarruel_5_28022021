@@ -1,8 +1,11 @@
-function getProductUrl() {
-    const urlLoc = window.location.href;
-    const url = new URL(urlLoc);
-    const newUrl = url.searchParams.get('id');
+function getUrl() {
+  const urlLoc = window.location.href;
+  const url = new URL(urlLoc);
+  return url.searchParams.get('id');
+}
 
+function displayProductDetails() {
+  const newUrl = getUrl();
   function displayProductImage(furniture) {
     const image = document.getElementById("produits");
     image.src = furniture.imageUrl;
@@ -54,4 +57,4 @@ function getProductUrl() {
     })
     .catch(error => console.log(error));
 }
-getProductUrl()
+displayProductDetails();
