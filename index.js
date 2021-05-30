@@ -1,4 +1,5 @@
 function displayFirstProduct(product) {
+  //targeting the first product from the array and getting the infos (image, name and description)
   const furniture =  product[0];
 
   const image1 = document.querySelector('.image');
@@ -12,6 +13,7 @@ function displayFirstProduct(product) {
 }
 
 function displaySecondProduct(product) {
+  //targeting the second product from the array and getting the infos (image, name and description)
   const furniture = product[1];
 
   const image1 = document.querySelector('.image1');
@@ -25,6 +27,7 @@ function displaySecondProduct(product) {
 }
 
 function displayThirdProduct(product) {
+  //targeting the third product from the array and getting the infos (image, name and description)
   const furniture = product[2];
 
   const image1 = document.querySelector('.image2');
@@ -38,6 +41,7 @@ function displayThirdProduct(product) {
 }
 
 function displayFourthProduct(product) {
+  //targeting the fourth product from the array and getting the infos (image, name and description)
   const furniture = product[3];
 
   const image1 = document.querySelector('.image3');
@@ -51,8 +55,8 @@ function displayFourthProduct(product) {
 }
 
 function displayFifthProduct(product) {
+  //targeting the fifth product from the array and getting the infos (image, name and description)
   const furniture = product[4];
-
   const image1 = document.querySelector('.image4');
   image1.innerHtml = furniture.imageUrl;
 
@@ -63,6 +67,7 @@ function displayFifthProduct(product) {
   desc1.innerHTML = furniture.description;
 }
 
+//Using fetch to get url and all API data
 function fetchFurnitures() { 
   fetch("http://localhost:3000/api/furniture")
   .then((res) => res.json())

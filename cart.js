@@ -1,13 +1,19 @@
-function displayProductsCount(product){
+//Saving product ids in each product buttons
+function savingProductId(products){
     const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-    addToCartButtons.forEach((button, i) => {
-        addToCartButtons[i].addEventListener('click', () => {
-            productCount(product[i]);
-            cartTotalCost(product[i]);
+    addToCartButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            //console.log(button);
+            const productId = button.id;
+            //console.log(productId);
+            const getProduct = products.filter(product => product._id == productId);
+            //console.log(getProduct);
+            productCount(getProduct[0]);
+            cartTotalCost(getProduct[0]);
         });
     });
 }
-
+//Counting how many items are in cart
 function productCount(product) {
     let productCount = localStorage.getItem('cartCount');
     productCount = parseInt(productCount);
@@ -25,7 +31,7 @@ function productCount(product) {
     }
     saveProductsToLocalStorage(product);
 }
-
+//Showing how many items are in cart
 function showProductCount() {
     let productCount = localStorage.getItem('cartCount');
     const productQuantity = document.querySelector('sup .quantity');
@@ -33,13 +39,14 @@ function showProductCount() {
         productQuantity.textContent = productCount;
     }
 }
+//Saving products added to localstorage
 function saveProductsToLocalStorage(product) {
     let cart = [];
     cart = JSON.parse(localStorage.getItem('productsInCart')) || [];
     cart.push(product);
     localStorage.setItem('productsInCart', JSON.stringify(cart));
 }
-
+//Calculating the total cost of the products in cart
 function cartTotalCost(product) {
     let cartCost = localStorage.getItem('totalCost');
     localStorage.setItem('totalCost',cartCost - product.price);
@@ -50,7 +57,7 @@ function cartTotalCost(product) {
         localStorage.setItem("totalCost", product.price);
     }
 }
-
+//Displays all the items added to the cart
 function displayCart() {
     let cartItems = localStorage.getItem("productsInCart");
     cartItems = JSON.parse(cartItems);
@@ -61,12 +68,12 @@ function displayCart() {
     if(cartItems && productContainer) {
         contactForm.style.display = 'block';
         productContainer.innerHTML = '';
-        cartItems.forEach(item => {
+        cartItems.forEach(product => {
             productContainer.innerHTML += `
             <div class="cart-product">
-                <img src="${item.imageUrl}" class="image">
-                <div><span>${item.name}</span></div>
-                <div class="price">${item.price/100},00€</div>
+                <img src="${product.imageUrl}" class="image">
+                <div><span>${product.name}</span></div>
+                <div class="price">${product.price/100},00€</div>
             </div>
             `;
         });
@@ -86,7 +93,7 @@ function displayCart() {
         contactForm.style.display = 'none';
     }
 }
-
+//Remove each localstorage keys and clear cart
 function clearCart() {
     const clearCartButton = document.querySelector('.suppress-btn');
     clearCartButton.addEventListener('click', () => {
@@ -96,7 +103,7 @@ function clearCart() {
         window.location.reload();
     })
 }
-
+//Checking form inputs thanks to regex
 function formValidity() {
     const firstName = document.getElementById('firstname');
     const lastName = document.getElementById('lastname');
@@ -112,11 +119,11 @@ function formValidity() {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         if (!firstName.value.match(regName)) {
-            alert('le champ nom contient des erreurs');
+            alert('le champ prénom contient des erreurs');
             window.location = 'page-panier.html';
         }
         if (!lastName.value.match(regName)) {
-            alert('le champ prénom contient des erreurs');
+            alert('le champ nom contient des erreurs');
             window.location = 'page-panier.html';
         }
         if (!city.value.match(regName)) {
@@ -135,7 +142,7 @@ function formValidity() {
         }
     })
 }
-
+//Sending data from the form plus cart to the server
 function sendOrder() {
 
     const firstName = document.getElementById('firstname').value;
@@ -145,10 +152,11 @@ function sendOrder() {
     const email = document.getElementById('email').value;
     let cartItems = localStorage.getItem("productsInCart");
     cartItems = JSON.parse(cartItems);
+    
     const products = Object.values(cartItems).map((product) => {
         return product._id;
-      });
-    console.log(products);
+    });
+    //console.log(products);
     
     const order = {
         contact: {
@@ -171,18 +179,17 @@ function sendOrder() {
     .then((res) => res.json())
     .then(res => {
         const orderId = res.orderId;
-        console.log(orderId);
-        window.location = `page-confirmation.html?orderId=${orderId}`;
-        localStorage.clear();
-    })
-} 
 
+        window.location = `page-confirmation.html?orderId=${orderId}`
+
+    })
+}
 
 function fetchFurnitures() { 
     fetch("http://localhost:3000/api/furniture")
     .then((res) => res.json())
     .then(furniture => {
-        displayProductsCount(furniture);
+        savingProductId(furniture);
         showProductCount();
         displayCart();
         clearCart();
